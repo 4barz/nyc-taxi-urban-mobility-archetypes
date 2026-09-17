@@ -1,0 +1,15 @@
+pandas
+pyarrow
+numpy
+scipy
+scikit-learn
+matplotlib
+seaborn
+umap-learn
+tensorly
+tslearn
+python-docx
+jupyter
+nbformat
+nbconvert
+ipykernel
