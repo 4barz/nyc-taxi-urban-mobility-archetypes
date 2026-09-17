@@ -6,6 +6,20 @@ MSc Big Data Analytics: Research Project
 This repository implements the six-layer unsupervised learning pipeline described
 in `nyc_taxi_urban_mobility_proposal.pdf`, applied to the full NYC TLC Yellow Taxi
 Trip Records for January–June 2023 (~19.5M raw trips, ~305MB compressed Parquet).
+Beyond the dissertation itself, the code is published here as a complete, working
+reference for applying a range of unsupervised methods — clustering, tensor
+decomposition, anomaly detection, and manifold embedding — end-to-end on a
+real, high-volume dataset.
+
+## Methods
+
+| Layer | Technique | Purpose |
+| --- | --- | --- |
+| 2 | K-Means | Spatial demand archetypes |
+| 3 | K-Shape | Temporal rhythm clustering |
+| 4 | Non-negative Tucker decomposition | Zone × hour × day-type factorisation |
+| 5 | Isolation Forest | Trip-level anomaly detection |
+| 6 | UMAP | Unified zone fingerprint embedding |
 
 ## Project layout
 
