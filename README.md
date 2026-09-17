@@ -21,6 +21,8 @@ real, high-volume dataset.
 | 5 | Isolation Forest | Trip-level anomaly detection |
 | 6 | UMAP | Unified zone fingerprint embedding |
 
+**[Read the full dissertation (PDF)](reports/dissertation/NYC_Taxi_Urban_Mobility_Dissertation.pdf)**
+
 ## Project layout
 
 ```
