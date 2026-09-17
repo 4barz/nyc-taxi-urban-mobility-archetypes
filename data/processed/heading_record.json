@@ -1,0 +1,130 @@
+[
+  [
+    1,
+    "Abstract"
+  ],
+  [
+    1,
+    "Table of Contents"
+  ],
+  [
+    1,
+    "1. Introduction and Motivation"
+  ],
+  [
+    1,
+    "2. Research Questions"
+  ],
+  [
+    1,
+    "3. Data and Big Data 5 Vs Assessment"
+  ],
+  [
+    1,
+    "4. Analytical Framework: Multi-Stage Unsupervised Pipeline"
+  ],
+  [
+    2,
+    "4.1 Data Loading, Quality Filtering, and Feature Engineering (Layer 1)"
+  ],
+  [
+    2,
+    "4.2 K-Means Spatial Clustering: Demand Archetypes (Layer 2, RQ1)"
+  ],
+  [
+    2,
+    "4.3 K-Shape Temporal Rhythm Clustering (Layer 3, RQ2)"
+  ],
+  [
+    2,
+    "4.4 Non-negative Tucker Decomposition (Layer 4, RQ3)"
+  ],
+  [
+    2,
+    "4.5 Isolation Forest Trip-Level Anomaly Detection (Layer 5, RQ4)"
+  ],
+  [
+    2,
+    "4.6 UMAP Unified Zone Fingerprint (Layer 6, RQ5)"
+  ],
+  [
+    1,
+    "5. Results"
+  ],
+  [
+    2,
+    "5.1 RQ1: Spatial Demand Archetypes (K-Means)"
+  ],
+  [
+    2,
+    "5.2 RQ2: Temporal Rhythm Archetypes (K-Shape)"
+  ],
+  [
+    2,
+    "5.3 RQ3: Latent Spatiotemporal Structure (Non-negative Tucker Decomposition)"
+  ],
+  [
+    2,
+    "5.4 RQ4: Trip-Level Anomaly Detection (Isolation Forest)"
+  ],
+  [
+    2,
+    "5.5 RQ5: Unified Zone Fingerprint (UMAP Synthesis)"
+  ],
+  [
+    1,
+    "6. Discussion"
+  ],
+  [
+    1,
+    "7. Validation and Robustness Summary"
+  ],
+  [
+    1,
+    "8. Limitations and Mitigations"
+  ],
+  [
+    1,
+    "9. Theoretical Grounding"
+  ],
+  [
+    2,
+    "9.1 Urban Informatics and the Smart City Paradigm"
+  ],
+  [
+    2,
+    "9.2 Unsupervised Learning as Hypothesis Generation"
+  ],
+  [
+    2,
+    "9.3 Tensor Methods in Urban Analytics"
+  ],
+  [
+    2,
+    "9.4 Relationship to Existing Literature"
+  ],
+  [
+    1,
+    "10. Data Ethics and Privacy"
+  ],
+  [
+    1,
+    "11. Conclusion and Future Work"
+  ],
+  [
+    2,
+    "11.2 Future Work"
+  ],
+  [
+    1,
+    "References"
+  ],
+  [
+    1,
+    "Appendix A. Reproducibility"
+  ],
+  [
+    1,
+    "Appendix B. Repository Structure"
+  ]
+]

@@ -1,0 +1,214 @@
+{
+  "layer1": {
+    "raw_trip_count": 19493620,
+    "filtered_trip_count": 18681100,
+    "retention_rate": 0.9583186704162695,
+    "n_zones_with_data": 260,
+    "sample_trip_count": 499998,
+    "elapsed_seconds": 12.4
+  },
+  "layer2": {
+    "best_k": 2,
+    "k_used": 5,
+    "inertias": {
+      "2": 1824.0293366387368,
+      "3": 1533.5628611913155,
+      "4": 1276.6768645367183,
+      "5": 1106.9958351386117,
+      "6": 994.5133842788889,
+      "7": 907.2891984922405,
+      "8": 831.3861626641642
+    },
+    "silhouettes": {
+      "2": 0.3070214545780357,
+      "3": 0.26417807695388057,
+      "4": 0.2927919359775596,
+      "5": 0.2881543750981749,
+      "6": 0.29572998583786597,
+      "7": 0.2971949920680306,
+      "8": 0.30150082472409373
+    },
+    "cluster_summary": [
+      {
+        "kmeans_cluster": 0,
+        "trip_count": 2733.0,
+        "mean_fare": 28.73549677369132,
+        "mean_distance": 5.520888966355252,
+        "pct_night": 0.17532203409211736,
+        "pct_cash": 0.2807152423084832,
+        "n_zones": 56
+      },
+      {
+        "kmeans_cluster": 1,
+        "trip_count": 298740.96226415096,
+        "mean_fare": 16.90939705795652,
+        "mean_distance": 2.85437646260895,
+        "pct_night": 0.15313058626495482,
+        "pct_cash": 0.17508317301061954,
+        "n_zones": 53
+      },
+      {
+        "kmeans_cluster": 2,
+        "trip_count": 51890.31578947369,
+        "mean_fare": 24.943362433029296,
+        "mean_distance": 4.8278592931790785,
+        "pct_night": 0.48704934295225016,
+        "pct_cash": 0.15289146961725597,
+        "n_zones": 19
+      },
+      {
+        "kmeans_cluster": 3,
+        "trip_count": 717.0470588235294,
+        "mean_fare": 31.799234037199334,
+        "mean_distance": 6.946469715040068,
+        "pct_night": 0.11740565851788398,
+        "pct_cash": 0.08877327499452949,
+        "n_zones": 85
+      },
+      {
+        "kmeans_cluster": 4,
+        "trip_count": 35062.04255319149,
+        "mean_fare": 51.14532753706953,
+        "mean_distance": 12.287677505333143,
+        "pct_night": 0.1769425914903298,
+        "pct_cash": 0.13833984871447066,
+        "n_zones": 47
+      }
+    ],
+    "silhouette_k_used": 0.2881543750981749
+  },
+  "layer3": {
+    "n_active_zones": 99,
+    "best_k": 3,
+    "silhouettes": {
+      "2": 0.2980076675388286,
+      "3": 0.3548809503148772,
+      "4": 0.30936390178689405,
+      "5": 0.2620548251636371,
+      "6": 0.22371678410643195
+    },
+    "borough_mix": {
+      "0": {
+        "Manhattan": 48,
+        "Queens": 11,
+        "Brooklyn": 3
+      },
+      "1": {
+        "Brooklyn": 8,
+        "Manhattan": 6
+      },
+      "2": {
+        "Brooklyn": 9,
+        "Queens": 8,
+        "Manhattan": 6
+      }
+    }
+  },
+  "layer4": {
+    "primary_rank": [
+      6,
+      4,
+      2
+    ],
+    "reconstruction_error": 0.13394639258388694,
+    "explained_variance": 0.9820583639137632,
+    "rank_sensitivity": {
+      "(4, 3, 2)": 0.16079208429370218,
+      "(5, 4, 2)": 0.11673108899920549,
+      "(6, 4, 2)": 0.14420149950264535,
+      "(8, 4, 2)": 0.14466458262637705
+    }
+  },
+  "layer5": {
+    "n_sampled": 499998,
+    "n_anomalies": 10000,
+    "anomaly_share": 0.02000008000032,
+    "median_fare_anomaly": 70.0,
+    "median_fare_normal": 12.8,
+    "median_speed_anomaly": 26.647888956174278,
+    "median_speed_normal": 9.832203000963613,
+    "median_distance_anomaly": 18.8,
+    "median_distance_normal": 1.8,
+    "top_anomaly_zones": [
+      {
+        "zone_id": 8,
+        "anomaly_rate": 1.0,
+        "n_sampled": 1
+      },
+      {
+        "zone_id": 6,
+        "anomaly_rate": 1.0,
+        "n_sampled": 1
+      },
+      {
+        "zone_id": 172,
+        "anomaly_rate": 1.0,
+        "n_sampled": 1
+      },
+      {
+        "zone_id": 23,
+        "anomaly_rate": 0.9333333333333333,
+        "n_sampled": 15
+      },
+      {
+        "zone_id": 5,
+        "anomaly_rate": 0.7142857142857143,
+        "n_sampled": 7
+      },
+      {
+        "zone_id": 214,
+        "anomaly_rate": 0.6666666666666666,
+        "n_sampled": 3
+      },
+      {
+        "zone_id": 118,
+        "anomaly_rate": 0.5,
+        "n_sampled": 2
+      },
+      {
+        "zone_id": 98,
+        "anomaly_rate": 0.5,
+        "n_sampled": 2
+      },
+      {
+        "zone_id": 11,
+        "anomaly_rate": 0.5,
+        "n_sampled": 4
+      },
+      {
+        "zone_id": 150,
+        "anomaly_rate": 0.5,
+        "n_sampled": 4
+      }
+    ],
+    "stability_correlation_between_random_halves": 0.5504968614120462
+  },
+  "layer6": {
+    "n_zones": 260,
+    "n_fingerprint_dims": 17,
+    "fingerprint_features": [
+      "log_trip_count",
+      "mean_fare",
+      "mean_distance",
+      "mean_duration",
+      "mean_speed",
+      "mean_tip_pct",
+      "pct_weekend",
+      "pct_cash",
+      "pct_night",
+      "pct_rush",
+      "tucker_zf_0",
+      "tucker_zf_1",
+      "tucker_zf_2",
+      "tucker_zf_3",
+      "tucker_zf_4",
+      "tucker_zf_5",
+      "anomaly_rate"
+    ],
+    "pca_explained_variance_ratio": [
+      0.3396810372240151,
+      0.14872883434475845
+    ]
+  },
+  "total_elapsed_seconds": 83.8
+}

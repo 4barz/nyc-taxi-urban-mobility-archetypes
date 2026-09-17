@@ -1,0 +1,8 @@
+{
+  "raw_trip_count": 19493620,
+  "filtered_trip_count": 18681100,
+  "retention_rate": 0.9583186704162695,
+  "n_zones_with_data": 260,
+  "sample_trip_count": 499998,
+  "elapsed_seconds": 12.4
+}

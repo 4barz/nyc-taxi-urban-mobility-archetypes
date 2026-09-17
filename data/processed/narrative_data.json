@@ -1,0 +1,325 @@
+{
+  "qc": {
+    "raw_trip_count": 19493620,
+    "filtered_trip_count": 18681100,
+    "retention_rate": 0.9583186704162695,
+    "n_zones_with_data": 260,
+    "sample_trip_count": 499998,
+    "elapsed_seconds": 12.4
+  },
+  "kmeans": {
+    "statistical_best_k": 2,
+    "statistical_best_silhouette": 0.307,
+    "k_used": 5,
+    "silhouette_k5": 0.288,
+    "silhouettes_full": {
+      "2": 0.3070214545780357,
+      "3": 0.26417807695388057,
+      "4": 0.2927919359775596,
+      "5": 0.2881543750981749,
+      "6": 0.29572998583786597,
+      "7": 0.2971949920680306,
+      "8": 0.30150082472409373
+    },
+    "cluster_table": [
+      {
+        "cluster": 0,
+        "label": "Mixed-access (elevated cash share)",
+        "n_zones": 56,
+        "total_trips": 153048,
+        "mean_fare": 28.74,
+        "mean_distance": 5.52,
+        "pct_night": 0.175,
+        "pct_cash": 0.281,
+        "pct_weekend": 0.289,
+        "top_zones": [
+          "Central Harlem North",
+          "Hamilton Heights",
+          "Sunnyside"
+        ]
+      },
+      {
+        "cluster": 1,
+        "label": "High-volume Manhattan core",
+        "n_zones": 53,
+        "total_trips": 15833271,
+        "mean_fare": 16.91,
+        "mean_distance": 2.85,
+        "pct_night": 0.153,
+        "pct_cash": 0.175,
+        "pct_weekend": 0.271,
+        "top_zones": [
+          "Upper East Side South",
+          "Midtown Center",
+          "Upper East Side North"
+        ]
+      },
+      {
+        "cluster": 2,
+        "label": "Nightlife / entertainment",
+        "n_zones": 19,
+        "total_trips": 985916,
+        "mean_fare": 24.94,
+        "mean_distance": 4.83,
+        "pct_night": 0.487,
+        "pct_cash": 0.153,
+        "pct_weekend": 0.564,
+        "top_zones": [
+          "East Village",
+          "Greenwich Village South",
+          "Lower East Side"
+        ]
+      },
+      {
+        "cluster": 3,
+        "label": "Outer-borough residential",
+        "n_zones": 85,
+        "total_trips": 60949,
+        "mean_fare": 31.8,
+        "mean_distance": 6.95,
+        "pct_night": 0.117,
+        "pct_cash": 0.089,
+        "pct_weekend": 0.162,
+        "top_zones": [
+          "Crown Heights North",
+          "Clinton Hill",
+          "Bedford"
+        ]
+      },
+      {
+        "cluster": 4,
+        "label": "Airport / transport hub",
+        "n_zones": 47,
+        "total_trips": 1647916,
+        "mean_fare": 51.15,
+        "mean_distance": 12.29,
+        "pct_night": 0.177,
+        "pct_cash": 0.138,
+        "pct_weekend": 0.205,
+        "top_zones": [
+          "JFK Airport",
+          "LaGuardia Airport",
+          "East Elmhurst"
+        ]
+      }
+    ]
+  },
+  "kshape": {
+    "n_active_zones": 99,
+    "best_k": 3,
+    "best_silhouette": 0.355,
+    "silhouettes_full": {
+      "2": 0.2980076675388286,
+      "3": 0.3548809503148772,
+      "4": 0.30936390178689405,
+      "5": 0.2620548251636371,
+      "6": 0.22371678410643195
+    },
+    "rhythm_table": [
+      {
+        "cluster": 0,
+        "label": "Evening/business-dominant",
+        "n_zones": 62,
+        "mean_trip_count": 270484.0,
+        "peak_hour": 18,
+        "trough_hour": 5,
+        "borough_mix": {
+          "Manhattan": 48,
+          "Queens": 11,
+          "Brooklyn": 3
+        }
+      },
+      {
+        "cluster": 1,
+        "label": "Nightlife (midnight-peaking)",
+        "n_zones": 14,
+        "mean_trip_count": 100540.0,
+        "peak_hour": 0,
+        "trough_hour": 5,
+        "borough_mix": {
+          "Brooklyn": 8,
+          "Manhattan": 6
+        }
+      },
+      {
+        "cluster": 2,
+        "label": "Morning-commuter",
+        "n_zones": 23,
+        "mean_trip_count": 18480.0,
+        "peak_hour": 8,
+        "trough_hour": 3,
+        "borough_mix": {
+          "Brooklyn": 9,
+          "Queens": 8,
+          "Manhattan": 6
+        }
+      }
+    ]
+  },
+  "tucker": {
+    "primary_rank": [
+      6,
+      4,
+      2
+    ],
+    "reconstruction_error": 0.1339,
+    "explained_variance": 0.9821,
+    "rank_sensitivity": {
+      "(4, 3, 2)": 0.16079208429370218,
+      "(5, 4, 2)": 0.11673108899920549,
+      "(6, 4, 2)": 0.14420149950264535,
+      "(8, 4, 2)": 0.14466458262637705
+    },
+    "daytype_factors": [
+      [
+        0.5660029519815081,
+        0.36700756097160153
+      ],
+      [
+        0.48255991984432006,
+        0.00033007241399303147
+      ]
+    ],
+    "hour_component_labels": {
+      "0": "Evening rush (peak 18h)",
+      "1": "Morning rush (peak 8h)",
+      "2": "Late-night (peak 23h)",
+      "3": "Midday (peak 15h)"
+    },
+    "zone_top": {
+      "0": [
+        "Midtown East",
+        "Penn Station/Madison Sq West",
+        "Murray Hill",
+        "Clinton East",
+        "Upper East Side North"
+      ],
+      "1": [
+        "East Village",
+        "West Village",
+        "Clinton East",
+        "JFK Airport",
+        "Greenwich Village South"
+      ],
+      "2": [
+        "Penn Station/Madison Sq West",
+        "JFK Airport",
+        "Times Sq/Theatre District",
+        "Yorkville West",
+        "Lincoln Square East"
+      ],
+      "3": [
+        "Midtown Center",
+        "Upper East Side South",
+        "Midtown North",
+        "Times Sq/Theatre District",
+        "Union Sq"
+      ],
+      "4": [
+        "Upper West Side South",
+        "Lenox Hill East",
+        "Lenox Hill West",
+        "Midtown East",
+        "Midtown Center"
+      ],
+      "5": [
+        "Upper East Side North",
+        "Upper East Side South",
+        "LaGuardia Airport",
+        "Lenox Hill East",
+        "Central Park"
+      ]
+    }
+  },
+  "isoforest": {
+    "n_sampled": 499998,
+    "n_anomalies": 10000,
+    "anomaly_share": 0.02,
+    "median_fare_anomaly": 70.0,
+    "median_fare_normal": 12.8,
+    "median_speed_anomaly": 26.6,
+    "median_speed_normal": 9.8,
+    "median_distance_anomaly": 18.8,
+    "median_distance_normal": 1.8,
+    "stability_correlation": 0.55,
+    "sparsity_artefact_zones": 3,
+    "top_anomaly_zones_robust": [
+      {
+        "Zone": "Canarsie",
+        "Borough": "Brooklyn",
+        "anomaly_rate": 0.359,
+        "n_sampled": 39,
+        "trip_count": 1622.0
+      },
+      {
+        "Zone": "JFK Airport",
+        "Borough": "Queens",
+        "anomaly_rate": 0.2673,
+        "n_sampled": 24426,
+        "trip_count": 912263.0
+      },
+      {
+        "Zone": "South Ozone Park",
+        "Borough": "Queens",
+        "anomaly_rate": 0.2143,
+        "n_sampled": 56,
+        "trip_count": 2083.0
+      },
+      {
+        "Zone": "Flushing Meadows-Corona Park",
+        "Borough": "Queens",
+        "anomaly_rate": 0.14,
+        "n_sampled": 100,
+        "trip_count": 3133.0
+      },
+      {
+        "Zone": "Briarwood/Jamaica Hills",
+        "Borough": "Queens",
+        "anomaly_rate": 0.125,
+        "n_sampled": 40,
+        "trip_count": 1642.0
+      },
+      {
+        "Zone": "East New York",
+        "Borough": "Brooklyn",
+        "anomaly_rate": 0.1111,
+        "n_sampled": 54,
+        "trip_count": 2020.0
+      },
+      {
+        "Zone": "Jamaica",
+        "Borough": "Queens",
+        "anomaly_rate": 0.1111,
+        "n_sampled": 72,
+        "trip_count": 2833.0
+      },
+      {
+        "Zone": "Mott Haven/Port Morris",
+        "Borough": "Bronx",
+        "anomaly_rate": 0.1,
+        "n_sampled": 40,
+        "trip_count": 1576.0
+      },
+      {
+        "Zone": "Flatlands",
+        "Borough": "Brooklyn",
+        "anomaly_rate": 0.1,
+        "n_sampled": 30,
+        "trip_count": 987.0
+      },
+      {
+        "Zone": "South Jamaica",
+        "Borough": "Queens",
+        "anomaly_rate": 0.0986,
+        "n_sampled": 71,
+        "trip_count": 2544.0
+      }
+    ]
+  },
+  "umap": {
+    "n_zones": 260,
+    "n_fingerprint_dims": 17,
+    "pca_variance_explained": 0.488
+  },
+  "total_elapsed_seconds": 83.8
+}
