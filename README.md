@@ -11,7 +11,6 @@ Trip Records for January–June 2023 (~19.5M raw trips, ~305MB compressed Parque
 
 ```
 bdat_project/
-├── email.txt                              # original proposal-submission email
 ├── nyc_taxi_urban_mobility_proposal.pdf    # approved research proposal
 ├── requirements.txt
 ├── src/                                    # pipeline source code (Layers 1-6)
