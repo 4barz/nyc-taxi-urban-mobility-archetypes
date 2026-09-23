@@ -206,12 +206,19 @@
           A Zone × Hour × Day-type tensor, factorised at rank <span class="mono text-amber-400">(6, 4, 2)</span> —
           <b>98.2%</b> explained variance, reconstruction error <b>0.134</b>.
         </p>
-        <ul class="space-y-2 text-slate-300 text-[0.9rem]">
-          <li>Evening rush (18:00) → Midtown East, Penn Station</li>
-          <li>Morning rush (08:00) → East/West Village, JFK</li>
-          <li>Late-night (23:00) → Times Sq, Penn Station, JFK</li>
-          <li>Midday (15:00) → Midtown Center, Union Sq</li>
+        <p class="text-xs uppercase tracking-wide text-slate-500 mb-2">4 hour-mode components (peak times)</p>
+        <ul class="space-y-1.5 text-slate-300 text-[0.9rem] mb-5">
+          <li>Evening rush — peaks 18:00</li>
+          <li>Morning rush — peaks 08:00</li>
+          <li>Late-night — peaks 23:00</li>
+          <li>Midday — peaks 15:00</li>
         </ul>
+        <p class="text-xs uppercase tracking-wide text-slate-500 mb-2">6 independent zone-mode components (top-loading zones)</p>
+        <p class="text-slate-400 text-[0.9rem] leading-relaxed">
+          Midtown East/Penn Station, East/West Village, Times Sq/JFK, Midtown Center/Union Sq,
+          Upper West Side, and Upper East Side/LaGuardia each dominate their own component —
+          recognisable neighbourhood groupings, not tied 1:1 to the hour components above.
+        </p>
       </div>
       <div class="figcard"><img src="../reports/figures/layer4_tucker_hour_factors.png" class="rounded-lg w-full" alt="Tucker hour component factors"></div>
     </div>
