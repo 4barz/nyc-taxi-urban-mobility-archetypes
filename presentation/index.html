@@ -20,6 +20,7 @@
     opacity: 0; pointer-events: none;
     transform: translateX(24px) scale(.99);
     transition: opacity .5s ease, transform .5s ease;
+    overflow-y: auto;
   }
   .slide.active { opacity: 1; pointer-events: auto; transform: translateX(0) scale(1); }
 
@@ -27,14 +28,18 @@
     letter-spacing: .18em; text-transform: uppercase;
     font-size: .78rem; font-weight: 700; color: #f4b740;
   }
+  .why-tag {
+    letter-spacing: .14em; text-transform: uppercase;
+    font-size: .68rem; font-weight: 700; color: #7dd3fc;
+  }
   .figcard { background: #f8fafc; border-radius: .9rem; padding: .6rem; box-shadow: 0 20px 45px -15px rgba(0,0,0,.55); }
   .glow { background: radial-gradient(circle at 30% 20%, rgba(244,183,64,.14), transparent 55%),
                        radial-gradient(circle at 80% 80%, rgba(56,189,248,.10), transparent 50%); }
   .stat { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: .85rem; }
+  .stat-blue { background: rgba(56,189,248,.05); border: 1px solid rgba(56,189,248,.18); border-radius: .85rem; }
   .dot { width: 7px; height: 7px; border-radius: 999px; background: rgba(255,255,255,.22); transition: all .25s; }
   .dot.active { background: #f4b740; width: 22px; border-radius: 999px; }
   ::-webkit-scrollbar { display: none; }
-  .fade-edge { -webkit-mask-image: linear-gradient(to bottom, black 88%, transparent 100%); }
 </style>
 </head>
 <body class="text-slate-100 antialiased">
@@ -43,8 +48,8 @@
 
 <div id="deck" class="relative w-screen h-screen overflow-hidden glow">
 
-  <!-- 1 : TITLE -->
-  <section class="slide active" data-index="0">
+  <!-- TITLE -->
+  <section class="slide active">
     <div class="max-w-5xl mx-auto text-center">
       <p class="kicker mb-6">MSc Big Data Analytics · Dissertation Defense</p>
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
@@ -61,30 +66,35 @@
     </div>
   </section>
 
-  <!-- 2 : AGENDA -->
-  <section class="slide" data-index="1">
+  <!-- AGENDA -->
+  <section class="slide">
     <div class="max-w-5xl mx-auto w-full">
       <p class="kicker mb-3">Roadmap</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-10">What we'll cover</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm md:text-base">
-        <div class="stat p-4"><span class="text-amber-400 mono">01</span><p class="mt-1 font-medium">Motivation & gap</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">02</span><p class="mt-1 font-medium">Research questions</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">03</span><p class="mt-1 font-medium">Data & scale</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">04</span><p class="mt-1 font-medium">Six-layer pipeline</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">05</span><p class="mt-1 font-medium">Spatial archetypes</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">06</span><p class="mt-1 font-medium">Temporal rhythms</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">07</span><p class="mt-1 font-medium">Spatiotemporal fingerprint</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">08</span><p class="mt-1 font-medium">Anomalies</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">09</span><p class="mt-1 font-medium">Unified embedding</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">10</span><p class="mt-1 font-medium">Validation & rigor</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">11</span><p class="mt-1 font-medium">Limitations</p></div>
-        <div class="stat p-4"><span class="text-amber-400 mono">12</span><p class="mt-1 font-medium">Contribution</p></div>
+      <div class="grid grid-cols-3 md:grid-cols-5 gap-3 text-sm">
+        <div class="stat p-3"><span class="text-amber-400 mono">01</span><p class="mt-1 font-medium">Motivation & gap</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">02</span><p class="mt-1 font-medium">Research questions</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">03</span><p class="mt-1 font-medium">Data & scale</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">04</span><p class="mt-1 font-medium">Six-layer pipeline</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">05</span><p class="mt-1 font-medium">Spatial archetypes</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">06</span><p class="mt-1 font-medium">Temporal rhythms</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">07</span><p class="mt-1 font-medium">Spatiotemporal fingerprint</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">08</span><p class="mt-1 font-medium">Anomalies</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">09</span><p class="mt-1 font-medium">Unified embedding</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">10</span><p class="mt-1 font-medium">Cross-method triangulation</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">11</span><p class="mt-1 font-medium">Validation & rigor</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">12</span><p class="mt-1 font-medium">Theoretical grounding</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">13</span><p class="mt-1 font-medium">Limitations & ethics</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">14</span><p class="mt-1 font-medium">Contribution</p></div>
+        <div class="stat p-3"><span class="text-amber-400 mono">15</span><p class="mt-1 font-medium">Future work</p></div>
       </div>
+      <p class="mt-6 text-xs text-slate-500">Every method section pairs <span class="text-slate-100">what we found</span> with
+        <span class="text-sky-300">why that method, and not another</span>.</p>
     </div>
   </section>
 
-  <!-- 3 : MOTIVATION -->
-  <section class="slide" data-index="2">
+  <!-- MOTIVATION -->
+  <section class="slide">
     <div class="max-w-4xl mx-auto">
       <p class="kicker mb-3">Motivation</p>
       <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-8">
@@ -103,15 +113,15 @@
     </div>
   </section>
 
-  <!-- 4 : RESEARCH QUESTIONS -->
-  <section class="slide" data-index="3">
+  <!-- RESEARCH QUESTIONS -->
+  <section class="slide">
     <div class="max-w-5xl mx-auto w-full">
       <p class="kicker mb-3">Research Questions</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Five questions, five pipeline layers</h2>
       <p class="text-slate-500 text-sm mb-6">Layer 1 (load, clean, feature-engineer) underpins all five — it doesn't
         answer one RQ on its own, so RQ1 begins at Layer 2.</p>
       <div class="space-y-3">
-        <div class="stat p-4 flex gap-4 items-start"><span class="mono text-amber-400 shrink-0">RQ1</span><p>What distinct <b>spatial demand archetypes</b> emerge across NYC's 260 taxi zones? <span class="text-slate-500">— Layer 2</span></p></div>
+        <div class="stat p-4 flex gap-4 items-start"><span class="mono text-amber-400 shrink-0">RQ1</span><p>What distinct <b>spatial demand archetypes</b> emerge across NYC's 260 active taxi zones? <span class="text-slate-500">— Layer 2</span></p></div>
         <div class="stat p-4 flex gap-4 items-start"><span class="mono text-amber-400 shrink-0">RQ2</span><p>How do <b>temporal rhythms</b> differ across zones? <span class="text-slate-500">— Layer 3</span></p></div>
         <div class="stat p-4 flex gap-4 items-start"><span class="mono text-amber-400 shrink-0">RQ3</span><p>What <b>latent spatiotemporal structure</b> jointly explains zone × hour × day-type behaviour? <span class="text-slate-500">— Layer 4</span></p></div>
         <div class="stat p-4 flex gap-4 items-start"><span class="mono text-amber-400 shrink-0">RQ4</span><p>Which trips/zones behave <b>anomalously</b>, and why? <span class="text-slate-500">— Layer 5</span></p></div>
@@ -120,15 +130,15 @@
     </div>
   </section>
 
-  <!-- 5 : DATA & SCALE -->
-  <section class="slide" data-index="4">
+  <!-- DATA & SCALE -->
+  <section class="slide">
     <div class="max-w-5xl mx-auto w-full">
       <p class="kicker mb-3">Data & the Big-Data Problem</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-8">NYC TLC Yellow Taxi · Jan–Jun 2023</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div class="stat p-5 text-center"><p class="text-3xl font-extrabold text-amber-400 mono">19.5M</p><p class="text-sm text-slate-400 mt-1">raw trips</p></div>
         <div class="stat p-5 text-center"><p class="text-3xl font-extrabold text-amber-400 mono">95.8%</p><p class="text-sm text-slate-400 mt-1">retained after QC</p></div>
-        <div class="stat p-5 text-center"><p class="text-3xl font-extrabold text-amber-400 mono">260</p><p class="text-sm text-slate-400 mt-1">active TLC zones</p></div>
+        <div class="stat p-5 text-center"><p class="text-3xl font-extrabold text-amber-400 mono">260</p><p class="text-sm text-slate-400 mt-1">of 263 zones active</p></div>
         <div class="stat p-5 text-center"><p class="text-3xl font-extrabold text-amber-400 mono">500K</p><p class="text-sm text-slate-400 mt-1">unbiased trip-level sample</p></div>
       </div>
       <p class="text-slate-300 leading-relaxed max-w-3xl">
@@ -140,8 +150,27 @@
     </div>
   </section>
 
-  <!-- 6 : PIPELINE OVERVIEW -->
-  <section class="slide" data-index="5">
+  <!-- WHY: STREAMING DESIGN -->
+  <section class="slide">
+    <div class="max-w-4xl mx-auto">
+      <p class="why-tag mb-3">Why · Layer 1 Engineering Decision</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Why streaming, not full materialisation</h2>
+      <ul class="space-y-3 text-slate-300 leading-relaxed">
+        <li>▸ The originally proposed approach — load all 18.68M filtered rows into one DataFrame — was estimated at
+          <b>&gt;2.5GB in memory</b>, before any modelling even starts.</li>
+        <li>▸ Instead, each of the 6 monthly Parquet files is loaded, filtered, and feature-engineered <b>in turn</b>,
+          then folded into three compact running artefacts before being discarded:</li>
+        <li class="ml-6 text-slate-400">— per-zone aggregate sums (zone-level means/shares derived once all months are processed)</li>
+        <li class="ml-6 text-slate-400">— a Zone × Hour × Day-type trip-count tensor (built incrementally, exactly — not sampled)</li>
+        <li class="ml-6 text-slate-400">— a proportionally-sampled ~500K-trip subset retained for Layer 5</li>
+        <li>▸ Result: peak memory is bounded to <b>one month's frame (~3M rows)</b> regardless of how many months are
+          added — genuinely bounded growth, not just "a script that happens to use a big file."</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PIPELINE OVERVIEW -->
+  <section class="slide">
     <div class="max-w-5xl mx-auto w-full">
       <p class="kicker mb-3">Methodology</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-10">The six-layer pipeline</h2>
@@ -161,8 +190,8 @@
     </div>
   </section>
 
-  <!-- 7 : LAYER 2 - KMEANS -->
-  <section class="slide" data-index="6">
+  <!-- LAYER 2 - KMEANS RESULTS -->
+  <section class="slide">
     <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center">
       <div>
         <p class="kicker mb-3">Layer 2 · RQ1</p>
@@ -181,8 +210,29 @@
     </div>
   </section>
 
-  <!-- 8 : LAYER 3 - KSHAPE -->
-  <section class="slide" data-index="7">
+  <!-- WHY: K-MEANS -->
+  <section class="slide">
+    <div class="max-w-4xl mx-auto">
+      <p class="why-tag mb-3">Why · Layer 2 Method Justification</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Why K-Means — and why not something else</h2>
+      <ul class="space-y-3 text-slate-300 leading-relaxed">
+        <li>▸ 10-feature, <b>z-score standardised</b> zone profile (log trip count, mean fare/distance/duration/speed,
+          tip share, weekend/cash/night/rush shares) — Euclidean distance assumes roughly spherical clusters in this
+          standardised space.</li>
+        <li>▸ The silhouette curve is <b>comparatively flat</b> (0.264–0.307 across k = 2–8) — no sharp elbow. The
+          k = 2 global peak is driven almost entirely by airport zones separating from everything else.</li>
+        <li>▸ k = 5 was adopted using the proposal's own <b>pre-registered validation criterion</b> — interpretability
+          against known NYC geography — for a modest 0.019 silhouette cost. Both solutions are reported for
+          transparency, not just the one that "won."</li>
+      </ul>
+      <p class="mt-6 text-xs text-slate-500 italic">Acknowledged limitation: K-Means assumes convex, similarly-sized
+        clusters, but NYC's zone geometry is irregular — DBSCAN is flagged as future work precisely because it doesn't
+        share that assumption.</p>
+    </div>
+  </section>
+
+  <!-- LAYER 3 - KSHAPE RESULTS -->
+  <section class="slide">
     <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center">
       <div class="figcard order-2 md:order-1"><img src="../reports/figures/layer3_kshape_centroids.png" class="rounded-lg w-full" alt="K-Shape temporal rhythm centroids"></div>
       <div class="order-1 md:order-2">
@@ -198,8 +248,30 @@
     </div>
   </section>
 
-  <!-- 9 : LAYER 4 - TUCKER -->
-  <section class="slide" data-index="8">
+  <!-- WHY: K-SHAPE -->
+  <section class="slide">
+    <div class="max-w-4xl mx-auto">
+      <p class="why-tag mb-3">Why · Layer 3 Method Justification</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Why K-Shape — and why normalise twice</h2>
+      <ul class="space-y-3 text-slate-300 leading-relaxed">
+        <li>▸ K-Shape (Paparrizos & Gravano, 2015) clusters on a <b>shift-invariant, cross-correlation-based shape
+          distance</b> — built for exactly this question: do rhythms match in shape, regardless of when the pattern
+          begins.</li>
+        <li>▸ <b>Two-stage normalisation</b>: raw hourly counts → fractional hourly share (removes the effect of
+          absolute volume), then z-normalise the resulting shape (removes offset and scale). A low-volume residential
+          zone peaking at 8am now clusters with Midtown, which also peaks at 8am — intentional, since RQ2 asks about
+          rhythm, not scale.</li>
+        <li>▸ Zones averaging fewer than 10 trips/day were excluded first (leaves 99 of 260 zones), to prevent
+          sparsity-induced shape distortion.</li>
+      </ul>
+      <p class="mt-6 text-xs text-slate-500 italic">Honest caveat: K-Shape's native shape distance isn't compatible
+        with the standard silhouette formula, so k was selected via silhouette on Euclidean distance between the same
+        z-normalised shapes — a documented approximation, not the native metric.</p>
+    </div>
+  </section>
+
+  <!-- LAYER 4 - TUCKER RESULTS -->
+  <section class="slide">
     <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center">
       <div>
         <p class="kicker mb-3">Layer 4 · RQ3</p>
@@ -226,8 +298,30 @@
     </div>
   </section>
 
-  <!-- 10 : LAYER 5 - ISOFOREST -->
-  <section class="slide" data-index="9">
+  <!-- WHY: TUCKER -->
+  <section class="slide">
+    <div class="max-w-4xl mx-auto">
+      <p class="why-tag mb-3">Why · Layer 4 Method Justification</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Why Tucker — not a 2D matrix factorisation</h2>
+      <ul class="space-y-3 text-slate-300 leading-relaxed">
+        <li>▸ Demand is inherently <b>three-dimensional</b>: zone × hour × day-type. A matrix factorisation (e.g. NMF)
+          must first collapse one mode, losing that interaction structure. Tucker (Kolda & Bader, 2009) preserves all
+          three modes simultaneously.</li>
+        <li>▸ <b>Non-negativity enforced throughout</b>: demand cannot be negative, and it makes component loadings
+          directly interpretable as "how much of this pattern," not abstract signed weights.</li>
+        <li>▸ <b>Random, not SVD, initialisation</b> for the multiplicative-update algorithm — SVD init was found
+          empirically to diverge (numerical overflow) at this tensor's scale. A real engineering finding, not a
+          default choice.</li>
+        <li>▸ Rank (6, 4, 2) was retained even though the neighbouring rank (5, 4, 2) achieves marginally
+          <i>lower</i> reconstruction error (0.117 vs 0.134) — expected under non-convex multiplicative-update
+          optimisation converging to different local minima, not evidence against (6, 4, 2), which was kept for its
+          finer zone-mode resolution.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LAYER 5 - ISOFOREST RESULTS -->
+  <section class="slide">
     <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center">
       <div class="figcard order-2 md:order-1"><img src="../reports/figures/layer5_isoforest_zone_heatmap.png" class="rounded-lg w-full" alt="Isolation Forest zone anomaly heatmap"></div>
       <div class="order-1 md:order-2">
@@ -246,8 +340,28 @@
     </div>
   </section>
 
-  <!-- 11 : LAYER 6 - UMAP -->
-  <section class="slide" data-index="10">
+  <!-- WHY: ISOLATION FOREST -->
+  <section class="slide">
+    <div class="max-w-4xl mx-auto">
+      <p class="why-tag mb-3">Why · Layer 5 Method Justification</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Why Isolation Forest — and what it doesn't claim</h2>
+      <ul class="space-y-3 text-slate-300 leading-relaxed">
+        <li>▸ <b>Isolation-based, not distance- or density-based</b>: anomalies are isolated by random recursive
+          partitioning in fewer splits — no distance metric required, near-linear scaling, well suited to mixed-scale
+          tabular trip features.</li>
+        <li>▸ 200 trees, 2% contamination, a 7-feature input (distance, duration, fare, speed, tip %, hour, weekend),
+          fit on the 499,998-trip representative sample.</li>
+        <li>▸ <b>Explicit epistemic framing</b>: this layer does not prove fraud — it flags structurally unusual trips
+          that may warrant compliance review, nothing more.</li>
+      </ul>
+      <p class="mt-6 text-xs text-slate-500 italic">Reference-class caveat: the model is trained on the pooled,
+        Manhattan-dominated trip distribution — so "anomalous" partly reflects distance from that norm (e.g. airport
+        trips), not proof of misconduct. Worth stating explicitly before handing a ranked list to a regulator.</p>
+    </div>
+  </section>
+
+  <!-- LAYER 6 - UMAP RESULTS -->
+  <section class="slide">
     <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-10 items-center">
       <div>
         <p class="kicker mb-3">Layer 6 · RQ5</p>
@@ -266,8 +380,47 @@
     </div>
   </section>
 
-  <!-- 12 : VALIDATION -->
-  <section class="slide" data-index="11">
+  <!-- WHY: UMAP -->
+  <section class="slide">
+    <div class="max-w-4xl mx-auto">
+      <p class="why-tag mb-3">Why · Layer 6 Method Justification</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Why UMAP — and why treat it as exploratory</h2>
+      <ul class="space-y-3 text-slate-300 leading-relaxed">
+        <li>▸ UMAP (McInnes, Healy & Melville, 2018), <span class="mono text-amber-400">n_neighbors=10,
+          min_dist=0.25</span>: preserves local neighbourhood structure via fuzzy topological approximation, rather
+          than global variance (PCA) or purely local density with no global-structure guarantee (t-SNE).</li>
+        <li>▸ The PCA baseline on the <i>same</i> 17-D fingerprint explains only 48.8% of variance in 2D — direct
+          quantitative evidence the fingerprint's structure is meaningfully non-linear, justifying manifold learning
+          over a linear projection.</li>
+      </ul>
+      <p class="mt-6 text-xs text-slate-500 italic">Explicitly used as an exploratory visualisation tool, not a
+        confirmatory statistical test — UMAP inter-cluster distances are not globally meaningful, so no statistical
+        claims are drawn from embedding geometry alone; it's validated instead against Layer 2's cluster labels and
+        known borough membership.</p>
+    </div>
+  </section>
+
+  <!-- CROSS-METHOD TRIANGULATION -->
+  <section class="slide">
+    <div class="max-w-4xl mx-auto">
+      <p class="kicker mb-3">Discussion</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Independent methods, convergent findings</h2>
+      <ul class="space-y-4 text-slate-300 leading-relaxed">
+        <li>▸ K-Shape (shape-based time-series clustering) and Tucker (tensor factorisation) each <b>independently
+          recover a nightlife/midnight-peaking pattern</b> — via completely different mathematical machinery.
+          Convergence across independent methods is stronger evidence than either method alone.</li>
+        <li>▸ Tucker's weekday-only day-type component (loading 0.37 weekday vs ≈0.0003 weekend) has
+          <b>no analogue</b> in K-Means or K-Shape — a genuinely latent pattern visible only because the full
+          three-mode tensor structure was preserved rather than collapsed.</li>
+        <li>▸ The UMAP fingerprint recovers NYC's borough geography with <b>no borough labels ever supplied</b> to
+          the model — the strongest evidence that all four preceding layers measure one coherent underlying reality,
+          not four unrelated sets of clusters.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- VALIDATION -->
+  <section class="slide">
     <div class="max-w-5xl mx-auto w-full">
       <p class="kicker mb-3">Validation & Rigor</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-8">One score is never enough</h2>
@@ -280,23 +433,85 @@
     </div>
   </section>
 
-  <!-- 13 : LIMITATIONS -->
-  <section class="slide" data-index="12">
+  <!-- THEORETICAL GROUNDING -->
+  <section class="slide">
+    <div class="max-w-5xl mx-auto w-full">
+      <p class="kicker mb-3">Theoretical Grounding</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Why unsupervised learning, why this literature</h2>
+      <p class="text-xs uppercase tracking-wide text-slate-500 mb-2">Big Data 5 Vs (Laney, 2001)</p>
+      <div class="grid grid-cols-3 md:grid-cols-5 gap-3 text-center mb-6">
+        <div class="stat p-3"><p class="text-amber-400 text-sm">★★★★★</p><p class="text-xs text-slate-400 mt-1">Volume</p></div>
+        <div class="stat p-3"><p class="text-amber-400 text-sm">★★★★</p><p class="text-xs text-slate-400 mt-1">Velocity</p></div>
+        <div class="stat p-3"><p class="text-amber-400 text-sm">★★★★</p><p class="text-xs text-slate-400 mt-1">Variety</p></div>
+        <div class="stat p-3"><p class="text-amber-400 text-sm">★★★</p><p class="text-xs text-slate-400 mt-1">Veracity</p></div>
+        <div class="stat p-3"><p class="text-amber-400 text-sm">★★★★★</p><p class="text-xs text-slate-400 mt-1">Value</p></div>
+      </div>
+      <ul class="space-y-2.5 text-slate-300 text-[0.95rem] leading-relaxed">
+        <li>▸ <b>Urban informatics / Smart City paradigm</b> (Batty, 2013) — taxi records are a canonical
+          urban-informatics dataset: city-scale mobility behaviour without GPS-level privacy cost.</li>
+        <li>▸ <b>Unsupervised learning as hypothesis generation</b> (Tukey, 1977; Hastie et al., 2009) — the goal is
+          discovering which hypotheses are worth testing next, not confirming one pre-specified outcome.</li>
+        <li>▸ <b>Tensor methods in urban analytics</b> (Kolda & Bader, 2009; Cichocki et al., 2016) — the
+          mathematical foundation for Tucker decomposition and for non-negativity as a route to interpretability.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LITERATURE POSITIONING -->
+  <section class="slide">
+    <div class="max-w-4xl mx-auto">
+      <p class="kicker mb-3">Literature Positioning</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Where this sits in the literature</h2>
+      <ul class="space-y-3 text-slate-300 leading-relaxed text-[0.95rem]">
+        <li>▸ <b>Yuan et al. (2011)</b> predict zone-level demand hotspots for a single driver — RQ1 generalises this
+          from a single-driver recommendation problem into a city-wide unsupervised taxonomy.</li>
+        <li>▸ <b>Castro et al. (2012)</b> model traffic from trip-level GPS traces — this analysis trades that
+          spatial resolution for the privacy and openness of TLC's zone-level, non-GPS release.</li>
+        <li>▸ <b>Colak et al. (2016)</b> model urban congestion across transport modes via mobile-phone data —
+          motivates the tri-modal (yellow / green taxi / FHV) comparison proposed as future work.</li>
+        <li>▸ <b>Zheng et al. (2014)</b> survey urban computing broadly — situates taxi analytics as one instance of
+          dense, sensor-generated urban data supporting analysis beyond its original operational purpose.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LIMITATIONS -->
+  <section class="slide">
     <div class="max-w-4xl mx-auto">
       <p class="kicker mb-3">Limitations</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-8">Where this should be read carefully</h2>
-      <ul class="space-y-3 text-slate-300 leading-relaxed">
+      <ul class="space-y-2.5 text-slate-300 leading-relaxed text-[0.95rem]">
         <li>▸ Zone-level, not GPS-level, spatial resolution — some within-zone blurring</li>
         <li>▸ Anomaly stability is moderate (0.55), not high — a few small-sample zones excluded as artefacts</li>
         <li>▸ Six months of 2023 only — seasonal and multi-year generalisation untested</li>
-        <li>▸ Yellow taxis ≠ full city mobility — excludes for-hire vehicles, transit, cycling, walking</li>
+        <li>▸ Yellow taxis are a small, declining share of NYC mobility relative to app-based FHVs — but remain the
+          only fully open, trip-level dataset at this volume and resolution</li>
+        <li>▸ Tucker reconstruction leaves 1.8% of variance unexplained — human mobility tensors are inherently
+          noisy; the retained rank captures macro-structure without overfitting to sparse, high-frequency noise</li>
         <li>▸ Archetype labels are an interpretive step, grounded in the data but not purely algorithmic</li>
       </ul>
     </div>
   </section>
 
-  <!-- 14 : CONTRIBUTION -->
-  <section class="slide" data-index="13">
+  <!-- ETHICS & PRIVACY -->
+  <section class="slide">
+    <div class="max-w-4xl mx-auto">
+      <p class="kicker mb-3">Data Ethics & Privacy</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Open, anonymised, zone-level — by design</h2>
+      <ul class="space-y-3 text-slate-300 leading-relaxed">
+        <li>▸ NYC TLC trip records are published as open government data, anonymised at source — no driver or
+          passenger identifiers are included anywhere in the dataset.</li>
+        <li>▸ Locations are reported at <b>zone level, not GPS coordinates</b>, preventing re-identification of
+          individual trips.</li>
+        <li>▸ The anomaly layer identifies <b>trip-level patterns, not individual actors</b>. Any regulatory
+          application would require separate data linkage by the TLC under its own compliance mandate — this
+          research outputs only aggregate, zone-level statistics.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTRIBUTION -->
+  <section class="slide">
     <div class="max-w-4xl mx-auto">
       <p class="kicker mb-3">Contribution</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">A reproducible framework, not just one clustering run</h2>
@@ -309,8 +524,27 @@
     </div>
   </section>
 
-  <!-- 15 : THANK YOU -->
-  <section class="slide" data-index="14">
+  <!-- FUTURE WORK -->
+  <section class="slide">
+    <div class="max-w-4xl mx-auto">
+      <p class="kicker mb-3">Future Work</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Four natural extensions</h2>
+      <ul class="space-y-3 text-slate-300 leading-relaxed">
+        <li>▸ Extend to a full year or multiple years (including the COVID-19 disruption) to test whether these
+          archetypes are seasonally stable or specific to January–June.</li>
+        <li>▸ Incorporate green taxi and For-Hire Vehicle (Uber/Lyft) records for a tri-modal comparison, addressing
+          the yellow-taxi selection bias noted throughout.</li>
+        <li>▸ Apply DBSCAN as an alternative to K-Means — may better respect NYC's irregular, non-convex zone
+          geometry than a centroid-based method.</li>
+        <li>▸ Apply the same streaming, multi-layer template to Ghanaian urban transport data as comparable
+          digital-ticketing, ride-hailing, or GPS fleet-tracking records become available — a methodological
+          template, not a New-York-specific result.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- THANK YOU -->
+  <section class="slide">
     <div class="max-w-3xl mx-auto text-center">
       <p class="kicker mb-6">Thank you</p>
       <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Questions?</h2>
@@ -326,14 +560,14 @@
   <button id="prev" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center transition">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
   </button>
-  <div id="dots" class="flex items-center gap-2"></div>
+  <div id="dots" class="flex items-center gap-1 max-w-[40vw] overflow-hidden"></div>
   <button id="next" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center transition">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
   </button>
 </div>
 
 <div class="fixed bottom-6 right-6 flex items-center gap-3 z-50 text-slate-500 text-xs mono">
-  <span id="counter">1 / 15</span>
+  <span id="counter">1 / 1</span>
   <button id="fullscreen" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center transition">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
   </button>
@@ -356,7 +590,7 @@
 
   function go(n) {
     i = Math.max(0, Math.min(slides.length - 1, n));
-    slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+    slides.forEach((s, idx) => { s.classList.toggle('active', idx === i); if (idx === i) s.scrollTop = 0; });
     dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
     counterEl.textContent = `${i + 1} / ${slides.length}`;
     progressEl.style.width = `${((i + 1) / slides.length) * 100}%`;
