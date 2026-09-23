@@ -22,7 +22,7 @@ real, high-volume dataset.
 | 6 | UMAP | Unified zone fingerprint embedding |
 
 **[Read the full dissertation (PDF)](reports/dissertation/NYC_Taxi_Urban_Mobility_Dissertation.pdf)** ·
-**[Defense slides](presentation/index.html)** (open locally in a browser)
+**[Defense slides](https://4barz.github.io/nyc-taxi-urban-mobility-archetypes/presentation/)**
 
 ## Project layout
 
