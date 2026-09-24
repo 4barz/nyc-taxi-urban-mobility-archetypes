@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Figure & Table Reference — Appendix</title>
+<title>Figure & Table Reference · Appendix</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -74,10 +74,10 @@
     <p class="kicker mb-3">Appendix</p>
     <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Figure & Table Reference</h1>
     <p class="text-slate-400 max-w-2xl mb-12">
-      A defense-prep cheat sheet: every figure and table in the dissertation, broken down into
+      A supporting reference for every figure and table in the dissertation, broken down into
       <b class="text-slate-200">what</b> it is, <b class="text-slate-200">why</b> it's included,
       its <b class="text-slate-200">axes/columns</b> and <b class="text-slate-200">legend/colours</b>,
-      and <b class="text-slate-200">how to read it</b> out loud if someone points at it.
+      and <b class="text-slate-200">how to read it</b>.
     </p>
 
     <!-- FIG: L2 SELECTION -->
@@ -87,10 +87,10 @@
       <div class="figcard mb-5"><img src="../reports/figures/layer2_kmeans_selection.png" class="rounded-lg w-full" alt="K-Means elbow and silhouette selection"></div>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>Two side-by-side line charts, both against candidate cluster count <span class="mono">k = 2..8</span>. Left: inertia (elbow method). Right: silhouette score.</p></div>
-        <div class="row"><p class="label">Why</p><p>Shows the k selection wasn't arbitrary — both standard internal validation metrics were computed across a full range before choosing k = 5.</p></div>
-        <div class="row"><p class="label">Axes</p><p>X: k (number of clusters), both panels. Left Y: inertia (within-cluster sum of squares — lower is tighter clusters). Right Y: silhouette score (−1 to 1 — higher is better separated).</p></div>
-        <div class="row"><p class="label">Legend/Colours</p><p>No categories — single blue line (inertia), single orange line (silhouette). The dashed grey vertical line marks k = 2, the <i>statistical</i> optimum by silhouette.</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"The elbow curve has no sharp bend — it decays smoothly, so it doesn't cleanly pick a k on its own. The silhouette curve peaks at k = 2 (0.307) then dips at k = 3 before climbing back up — that's the flat, noisy curve I mentioned: k = 5 scores 0.288, only 0.019 below the peak, but is far more interpretable. I reported both, not just the one I used."</p></div>
+        <div class="row"><p class="label">Why</p><p>Shows the k selection wasn't arbitrary: both standard internal validation metrics were computed across a full range before choosing k = 5.</p></div>
+        <div class="row"><p class="label">Axes</p><p>X: k (number of clusters), both panels. Left Y: inertia (within-cluster sum of squares; lower is tighter clusters). Right Y: silhouette score (−1 to 1; higher is better separated).</p></div>
+        <div class="row"><p class="label">Legend/Colours</p><p>No categories: single blue line (inertia), single orange line (silhouette). The dashed grey vertical line marks k = 2, the <i>statistical</i> optimum by silhouette.</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"The elbow curve has no sharp bend; it decays smoothly, so it doesn't cleanly pick a k on its own. The silhouette curve peaks at k = 2 (0.307) then dips at k = 3 before climbing back up: that's the flat, noisy curve mentioned above. k = 5 scores 0.288, only 0.019 below the peak, but is far more interpretable. I reported both, not just the one I used."</p></div>
       </div>
     </section>
 
@@ -101,10 +101,10 @@
       <div class="figcard mb-5"><img src="../reports/figures/layer2_kmeans_violins.png" class="rounded-lg w-full" alt="K-Means cluster violin plots"></div>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>Five violin plots (one per feature), each showing the distribution of that feature across the zones inside each of the 5 clusters.</p></div>
-        <div class="row"><p class="label">Why</p><p>The summary table only shows the mean per archetype — this shows the full spread, proving each cluster is a real, coherent distribution rather than five arbitrary centroids.</p></div>
-        <div class="row"><p class="label">Axes</p><p>X (all panels): cluster ID, 0–4. Y: log10(trip_count), mean_fare ($), mean_distance (mi), pct_night (0–1), pct_cash (0–1) — one per panel.</p></div>
+        <div class="row"><p class="label">Why</p><p>The summary table only shows the mean per archetype: this shows the full spread, proving each cluster is a real, coherent distribution rather than five arbitrary centroids.</p></div>
+        <div class="row"><p class="label">Axes</p><p>X (all panels): cluster ID, 0–4. Y: log10(trip_count), mean_fare ($), mean_distance (mi), pct_night (0–1), pct_cash (0–1); one per panel.</p></div>
         <div class="row"><p class="label">Legend/Colours</p><p>Colour = cluster ID (matplotlib default order): 0 blue = Mixed-access, 1 orange = Manhattan core, 2 green = Nightlife, 3 red = Outer-borough residential, 4 purple = Airport/hub. The black bar + white dot inside each violin is the median and interquartile range.</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Cluster 1 (Manhattan core) is highest and tightest on volume, lowest on fare/distance. Cluster 4 (airport) is highest on fare/distance. Cluster 2 (nightlife) stands alone on % night trips. If asked why cluster 4's volume violin is so wide: that's JFK/LaGuardia themselves — a couple of mega-hub zones — sitting alongside many smaller connector zones that share the airport's fare/distance signature but not its volume. K-Means clusters on standardised behavioural features, not raw size, so that's expected, not a flaw."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Cluster 1 (Manhattan core) is highest and tightest on volume, lowest on fare/distance. Cluster 4 (airport) is highest on fare/distance. Cluster 2 (nightlife) stands alone on % night trips. If asked why cluster 4's volume violin is so wide: that's JFK/LaGuardia themselves (a couple of mega-hub zones) sitting alongside many smaller connector zones that share the airport's fare/distance signature but not its volume. K-Means clusters on standardised behavioural features, not raw size, so that's expected, not a flaw."</p></div>
       </div>
     </section>
 
@@ -116,7 +116,7 @@
         <div class="row"><p class="label">What</p><p>One row per archetype: zone count, total trips, mean fare/distance, % night, % cash, and 2–3 example zones.</p></div>
         <div class="row"><p class="label">Why</p><p>Turns five abstract cluster IDs into five named, defensible archetypes with the numbers to back each label.</p></div>
         <div class="row"><p class="label">Columns</p><p>Archetype · Zones (count) · Total trips (6mo) · Mean fare · Mean distance · % night · % cash · Example zones.</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Read down the 'zones' column first — 53 + 85 = 138 of 260 zones sit at the two extremes (dense core vs. near-empty periphery). That imbalance, not any single archetype, is the headline equity finding."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Read down the 'zones' column first: 53 + 85 = 138 of 260 zones sit at the two extremes (dense core vs. near-empty periphery). That imbalance, not any single archetype, is the headline equity finding."</p></div>
       </div>
     </section>
 
@@ -127,10 +127,10 @@
       <div class="figcard mb-5"><img src="../reports/figures/layer3_kshape_selection.png" class="rounded-lg w-full" alt="K-Shape silhouette selection"></div>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>A single line chart: silhouette score against candidate k = 2..6 for the temporal rhythm clustering.</p></div>
-        <div class="row"><p class="label">Why</p><p>Unlike Layer 2, this curve has a clean, unambiguous peak — a much easier validation story to tell.</p></div>
+        <div class="row"><p class="label">Why</p><p>Unlike Layer 2, this curve has a clean, unambiguous peak: a much easier validation story to tell.</p></div>
         <div class="row"><p class="label">Axes</p><p>X: k. Y: silhouette score.</p></div>
         <div class="row"><p class="label">Legend/Colours</p><p>Single green line. Dashed grey vertical line marks the selected k = 3 (silhouette 0.355).</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"This one's simple: k = 3 is both the statistical optimum and the interpretable choice — no trade-off to defend here, unlike Layer 2."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"This one's simple: k = 3 is both the statistical optimum and the interpretable choice, so there's no trade-off to defend here, unlike Layer 2."</p></div>
       </div>
     </section>
 
@@ -141,10 +141,10 @@
       <div class="figcard mb-5"><img src="../reports/figures/layer3_kshape_centroids.png" class="rounded-lg w-full" alt="K-Shape rhythm centroids"></div>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>Three lines, each the average 24-hour demand <i>shape</i> (not volume) for one rhythm cluster.</p></div>
-        <div class="row"><p class="label">Why</p><p>Visualises what "rhythm archetype" actually means — a repeating daily pattern, independent of how big the zone is.</p></div>
-        <div class="row"><p class="label">Axes</p><p>X: hour of day (0–23). Y: z-normalised demand shape (unitless — 0 is that zone-group's own daily average, not zero trips).</p></div>
+        <div class="row"><p class="label">Why</p><p>Visualises what "rhythm archetype" actually means: a repeating daily pattern, independent of how big the zone is.</p></div>
+        <div class="row"><p class="label">Axes</p><p>X: hour of day (0–23). Y: z-normalised demand shape (unitless; 0 is that zone-group's own daily average, not zero trips).</p></div>
         <div class="row"><p class="label">Legend/Colours</p><p>Blue = Rhythm 0 (evening/business), orange = Rhythm 1 (nightlife, peaks at hour 0), green = Rhythm 2 (morning-commuter, peaks at hour 8).</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"The Y-axis isn't trip count — it's shape after two rounds of normalisation, so a huge Midtown zone and a tiny residential zone can land on the same line if their <i>hourly pattern</i> matches. That's deliberate: RQ2 is about rhythm, not scale."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"The Y-axis isn't trip count; it's shape after two rounds of normalisation, so a huge Midtown zone and a tiny residential zone can land on the same line if their <i>hourly pattern</i> matches. That's deliberate: RQ2 is about rhythm, not scale."</p></div>
       </div>
     </section>
 
@@ -154,9 +154,9 @@
       <h2 class="text-xl md:text-2xl font-bold mb-4">K-Shape rhythm archetypes</h2>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>One row per rhythm archetype: zone count, mean trips/zone, peak hour, trough hour, borough mix.</p></div>
-        <div class="row"><p class="label">Why</p><p>Shows each rhythm cluster mixes multiple boroughs — supporting the claim that function, not geography, drives rhythm.</p></div>
+        <div class="row"><p class="label">Why</p><p>Shows each rhythm cluster mixes multiple boroughs, supporting the claim that function, not geography, drives rhythm.</p></div>
         <div class="row"><p class="label">Columns</p><p>Rhythm archetype · Zones · Mean trips/zone · Peak hour · Trough hour · Borough mix (counts).</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Look at the borough-mix column, not the label — Rhythm 2 (morning-commuter) is almost evenly Brooklyn/Queens/Manhattan. That cross-borough mixing is the actual evidence for the RQ2 claim, not the peak-hour number alone."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Look at the borough-mix column, not the label: Rhythm 2 (morning-commuter) is almost evenly Brooklyn/Queens/Manhattan. That cross-borough mixing is the actual evidence for the RQ2 claim, not the peak-hour number alone."</p></div>
       </div>
     </section>
 
@@ -167,10 +167,10 @@
       <div class="figcard mb-5"><img src="../reports/figures/layer4_tucker_rank_sensitivity.png" class="rounded-lg w-full" alt="Tucker rank sensitivity bar chart"></div>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>A bar chart of relative reconstruction error for four candidate Tucker core ranks.</p></div>
-        <div class="row"><p class="label">Why</p><p>Justifies the chosen rank (6,4,2) by showing it wasn't picked in isolation — nearby ranks were tested too.</p></div>
-        <div class="row"><p class="label">Axes</p><p>X: candidate rank as (zone, hour, day-type) — (4,3,2), (5,4,2), (6,4,2), (8,4,2). Y: relative reconstruction error (lower = better fit).</p></div>
-        <div class="row"><p class="label">Legend/Colours</p><p>No categories — uniform grey bars; the comparison is between bars, not colour-coded groups.</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Notice (5,4,2) is actually <i>lower</i> than my chosen (6,4,2) — 0.117 vs 0.134. I kept (6,4,2) anyway, and I say so directly: this is non-convex multiplicative-update optimisation, so nearby ranks can land in different local minima — it's not evidence against my choice, and (6,4,2) gives finer zone-mode resolution, which is what I wanted going in."</p></div>
+        <div class="row"><p class="label">Why</p><p>Justifies the chosen rank (6,4,2) by showing it wasn't picked in isolation; nearby ranks were tested too.</p></div>
+        <div class="row"><p class="label">Axes</p><p>X: candidate rank as (zone, hour, day-type): (4,3,2), (5,4,2), (6,4,2), (8,4,2). Y: relative reconstruction error (lower = better fit).</p></div>
+        <div class="row"><p class="label">Legend/Colours</p><p>No categories: uniform grey bars; the comparison is between bars, not colour-coded groups.</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Notice (5,4,2) is actually <i>lower</i> than the chosen (6,4,2): 0.117 vs 0.134. That rank was kept anyway, stated directly: this is non-convex multiplicative-update optimisation, so nearby ranks can land in different local minima; it's not evidence against the choice, and (6,4,2) gives finer zone-mode resolution, which is what I wanted going in."</p></div>
       </div>
     </section>
 
@@ -181,10 +181,10 @@
       <div class="figcard mb-5"><img src="../reports/figures/layer4_tucker_hour_factors.png" class="rounded-lg w-full" alt="Tucker hour component loadings"></div>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>Four lines, one per hour-mode Tucker component, each showing how strongly that component "activates" across the 24-hour day.</p></div>
-        <div class="row"><p class="label">Why</p><p>These four components are one of the three factor axes recovered by the tensor decomposition — this figure is the direct evidence for what each one means.</p></div>
+        <div class="row"><p class="label">Why</p><p>These four components are one of the three factor axes recovered by the tensor decomposition; this figure is the direct evidence for what each one means.</p></div>
         <div class="row"><p class="label">Axes</p><p>X: hour of day (0–23). Y: component loading (unitless, non-negative by construction).</p></div>
         <div class="row"><p class="label">Legend/Colours</p><p>Blue = component 0 (evening rush, peak 18:00), orange = component 1 (morning rush, peak 08:00), green = component 2 (late-night, peak 23:00), red = component 3 (midday, peak 15:00).</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"These are hour-mode components only — a separate factorisation from the six zone-mode components on the next figure. They're not paired 1:1 by index; the core tensor is what mixes them together, not shared component numbers."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"These are hour-mode components only: a separate factorisation from the six zone-mode components on the next figure. They're not paired 1:1 by index; the core tensor is what mixes them together, not shared component numbers."</p></div>
       </div>
     </section>
 
@@ -197,8 +197,8 @@
         <div class="row"><p class="label">What</p><p>A scatter of all 260 zones on just 2 of the 6 zone-mode components, coloured by borough.</p></div>
         <div class="row"><p class="label">Why</p><p>Shows the zone-mode factorisation recovers recognisable, high-loading Manhattan/Queens hub zones on these two axes specifically.</p></div>
         <div class="row"><p class="label">Axes</p><p>X: zone factor component 0. Y: zone factor component 1. Both are Tucker loadings (non-negative, unitless).</p></div>
-        <div class="row"><p class="label">Legend/Colours</p><p>Colour = borough — EWR, Queens, Bronx, Manhattan, Staten Island, Brooklyn. (EWR = Newark Liberty Airport's TLC zone.)</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"If asked why only Manhattan (red) and a couple of Queens (orange) points stand out while Bronx/Brooklyn/Staten Island cluster at the origin: this plot is only 2 of the 6 zone-mode dimensions. Those boroughs load more heavily on the other four components, not shown here — this is a projection, not the full picture."</p></div>
+        <div class="row"><p class="label">Legend/Colours</p><p>Colour = borough: EWR, Queens, Bronx, Manhattan, Staten Island, Brooklyn. (EWR = Newark Liberty Airport's TLC zone.)</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"If asked why only Manhattan (red) and a couple of Queens (orange) points stand out while Bronx/Brooklyn/Staten Island cluster at the origin: this plot is only 2 of the 6 zone-mode dimensions. Those boroughs load more heavily on the other four components, not shown here; this is a projection, not the full picture."</p></div>
       </div>
     </section>
 
@@ -210,7 +210,7 @@
         <div class="row"><p class="label">What</p><p>A 2-column lookup: component index → plain-English interpretation (peak hour).</p></div>
         <div class="row"><p class="label">Why</p><p>Turns four abstract loading curves into four named temporal patterns, referenced throughout the results section.</p></div>
         <div class="row"><p class="label">Columns</p><p>Component (0–3) · Interpretation (peak hour).</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"This table is just the caption for the hour-factors figure — component numbers here match that figure's legend, not the separate zone-mode components."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"This table is just the caption for the hour-factors figure: component numbers here match that figure's legend, not the separate zone-mode components."</p></div>
       </div>
     </section>
 
@@ -224,7 +224,7 @@
         <div class="row"><p class="label">Why</p><p>Makes the "long, fast, expensive" anomaly profile visible directly, rather than just asserted via medians.</p></div>
         <div class="row"><p class="label">Axes</p><p>X: fare amount ($). Y: speed (mph).</p></div>
         <div class="row"><p class="label">Legend/Colours</p><p>Blue = is_anomaly False, red/pink = is_anomaly True.</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Notice the dense vertical red-and-blue stripe at exactly $70 — that's not noise, that's the flat-rate JFK-Manhattan fare. It's a structural pricing rule, not a modelling artefact, and it's a big part of why JFK dominates the anomaly-rate ranking: every JFK↔Manhattan trip shares that exact $70 fare regardless of actual distance/speed, which reads as unusual relative to the metered-fare norm the rest of the city runs on."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Notice the dense vertical red-and-blue stripe at exactly $70: that's not noise, that's the flat-rate JFK-Manhattan fare. It's a structural pricing rule, not a modelling artefact, and it's a big part of why JFK dominates the anomaly-rate ranking: every JFK↔Manhattan trip shares that exact $70 fare regardless of actual distance/speed, which reads as unusual relative to the metered-fare norm the rest of the city runs on."</p></div>
       </div>
     </section>
 
@@ -235,10 +235,10 @@
       <div class="figcard mb-5"><img src="../reports/figures/layer5_isoforest_zone_heatmap.png" class="rounded-lg w-full" alt="Isolation Forest zone anomaly rate bar chart"></div>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>A horizontal bar chart of the zones with the highest anomaly rate, restricted to zones with ≥30 sampled trips.</p></div>
-        <div class="row"><p class="label">Why</p><p>The ≥30 filter is the whole point — the raw (unfiltered) ranking is dominated by a small-sample artefact (a single odd trip in a near-empty zone reads as "100% anomalous"). This figure is the corrected, credible version.</p></div>
+        <div class="row"><p class="label">Why</p><p>The ≥30 filter is the whole point: the raw (unfiltered) ranking is dominated by a small-sample artefact (a single odd trip in a near-empty zone reads as "100% anomalous"). This figure is the corrected, credible version.</p></div>
         <div class="row"><p class="label">Axes</p><p>X: anomaly rate (0–1). Y: zone name, sorted descending.</p></div>
         <div class="row"><p class="label">Legend/Colours</p><p>Colour = borough (Brooklyn, Queens, Bronx, Manhattan).</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Canarsie tops it on a modest sample (39 trips), but JFK Airport is the more credible signal — a large sample (24,426 trips) still shows a 27% anomaly rate. The rest of the well-supported list is almost entirely outer Queens/Brooklyn, which is itself a finding: peripheral trips look 'unusual' against a norm defined by short Manhattan rides."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Canarsie tops it on a modest sample (39 trips), but JFK Airport is the more credible signal: a large sample (24,426 trips) still shows a 27% anomaly rate. The rest of the well-supported list is almost entirely outer Queens/Brooklyn, which is itself a finding: peripheral trips look 'unusual' against a norm defined by short Manhattan rides."</p></div>
       </div>
     </section>
 
@@ -250,7 +250,7 @@
         <div class="row"><p class="label">What</p><p>Median fare, speed, and distance, normal vs. anomalous, with the ratio between them.</p></div>
         <div class="row"><p class="label">Why</p><p>Quantifies "long, fast, expensive" precisely, rather than leaving it qualitative.</p></div>
         <div class="row"><p class="label">Columns</p><p>Feature (median) · Normal · Anomalous · Ratio.</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Distance has the largest ratio (10.4×) — anomalies are defined more by <i>how far</i> the trip goes than by fare or speed alone."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Distance has the largest ratio (10.4×): anomalies are defined more by <i>how far</i> the trip goes than by fare or speed alone."</p></div>
       </div>
     </section>
 
@@ -260,23 +260,23 @@
       <h2 class="text-xl md:text-2xl font-bold mb-4">Highest anomaly-rate zones (n ≥ 30)</h2>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>The full 10-row table behind the zone-anomaly bar chart: zone, borough, anomaly rate, sample size, total 6-month trips.</p></div>
-        <div class="row"><p class="label">Why</p><p>Lets a reader check sample size (n sampled) alongside rate — the two together, not the rate alone, are what make a zone's ranking credible.</p></div>
+        <div class="row"><p class="label">Why</p><p>Lets a reader check sample size (n sampled) alongside rate: the two together, not the rate alone, are what make a zone's ranking credible.</p></div>
         <div class="row"><p class="label">Columns</p><p>Zone · Borough · Anomaly rate · n sampled · Total trips (6mo).</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Always cite n sampled alongside the rate — Canarsie's 36% is on just 39 trips, JFK's 27% is on 24,426. Both are 'real' by the ≥30 filter, but they carry very different statistical weight."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Always cite n sampled alongside the rate: Canarsie's 36% is on just 39 trips, JFK's 27% is on 24,426. Both are 'real' by the ≥30 filter, but they carry very different statistical weight."</p></div>
       </div>
     </section>
 
     <!-- FIG: L6 UMAP -->
     <section id="fig-l6-umap" class="mb-14">
       <p class="kicker mb-2">Figure · Layer 6</p>
-      <h2 class="text-xl md:text-2xl font-bold mb-4">UMAP fingerprint — borough vs. K-Means cluster</h2>
+      <h2 class="text-xl md:text-2xl font-bold mb-4">UMAP fingerprint: borough vs. K-Means cluster</h2>
       <div class="figcard mb-5"><img src="../reports/figures/layer6_umap.png" class="rounded-lg w-full" alt="UMAP embedding coloured by borough and by K-Means cluster"></div>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>The <i>same</i> 2D UMAP embedding of all 260 zones, plotted twice side by side with two different colour keys.</p></div>
         <div class="row"><p class="label">Why</p><p>This is the single most important validation figure in the whole dissertation: two completely independent label sets (known geography vs. an unsupervised cluster assignment) explain the same shape.</p></div>
-        <div class="row"><p class="label">Axes</p><p>X: umap_x. Y: umap_y — both are UMAP's own internal coordinates; the units are not independently meaningful, only relative position/neighbourhood is.</p></div>
+        <div class="row"><p class="label">Axes</p><p>X: umap_x. Y: umap_y (both are UMAP's own internal coordinates; the units are not independently meaningful, only relative position/neighbourhood is).</p></div>
         <div class="row"><p class="label">Legend/Colours</p><p>Left panel: colour = borough (6 categories). Right panel: colour = Layer 2 K-Means cluster (0–4, same colour convention as the violin plot).</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Compare the two panels shape-for-shape, not point-for-point: the same visual regions that are borough-pure on the left are cluster-pure on the right. That's the proof that Layer 2's clusters aren't a modelling artefact — they land on real, contiguous regions of the manifold, coloured completely independently of the borough labels the model never saw."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Compare the two panels shape-for-shape, not point-for-point: the same visual regions that are borough-pure on the left are cluster-pure on the right. That's the proof that Layer 2's clusters aren't a modelling artefact: they land on real, contiguous regions of the manifold, coloured completely independently of the borough labels the model never saw."</p></div>
       </div>
     </section>
 
@@ -286,10 +286,10 @@
       <h2 class="text-xl md:text-2xl font-bold mb-4">UMAP vs. linear PCA baseline</h2>
       <div class="figcard mb-5"><img src="../reports/figures/layer6_umap_vs_pca.png" class="rounded-lg w-full" alt="UMAP vs PCA comparison"></div>
       <div class="card p-5">
-        <div class="row"><p class="label">What</p><p>Two 2D projections of the exact same 17-dimensional zone fingerprint — UMAP (left) vs. linear PCA (right).</p></div>
+        <div class="row"><p class="label">What</p><p>Two 2D projections of the exact same 17-dimensional zone fingerprint: UMAP (left) vs. linear PCA (right).</p></div>
         <div class="row"><p class="label">Why</p><p>Quantifies <i>why</i> a non-linear method was needed instead of just running PCA and calling it a day.</p></div>
         <div class="row"><p class="label">Axes</p><p>Left: umap_x / umap_y (non-linear, local-structure-preserving coordinates). Right: pca_x / pca_y (the first two principal components, in original-feature-variance units).</p></div>
-        <div class="row"><p class="label">Legend/Colours</p><p>Colour = borough, both panels — same 6-category key as the previous figure.</p></div>
+        <div class="row"><p class="label">Legend/Colours</p><p>Colour = borough, both panels; same 6-category key as the previous figure.</p></div>
         <div class="row"><p class="label">How to read it</p><p>"PCA explains only 48.8% of variance in 2D and the boroughs visibly overlap more on the right. That's the quantitative justification for UMAP: the fingerprint's real structure is non-linear, so a linear method loses separation that UMAP recovers."</p></div>
       </div>
     </section>
@@ -300,9 +300,9 @@
       <h2 class="text-xl md:text-2xl font-bold mb-4">Big Data 5 Vs assessment</h2>
       <div class="card p-5">
         <div class="row"><p class="label">What</p><p>A 5-row table rating the dataset against Laney's (2001) Volume/Velocity/Variety/Veracity/Value framework, each with a star rating and one line of supporting evidence.</p></div>
-        <div class="row"><p class="label">Why</p><p>Establishes, before any modelling, that this is a genuine Big Data problem — not just "a large CSV."</p></div>
+        <div class="row"><p class="label">Why</p><p>Establishes, before any modelling, that this is a genuine Big Data problem, not just "a large CSV."</p></div>
         <div class="row"><p class="label">Columns</p><p>Dimension · Assessment (stars) · Evidence.</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Veracity is the deliberately lowest-rated V (3 of 5) — I'm not overselling data quality; 4.2% of raw trips were removed by quality filters, and I say so plainly."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Veracity is the deliberately lowest-rated V (3 of 5): data quality isn't oversold; 4.2% of raw trips were removed by quality filters, and I say so plainly."</p></div>
       </div>
     </section>
 
@@ -314,7 +314,7 @@
         <div class="row"><p class="label">What</p><p>One row per layer (2–6): what validation method was used, and what the outcome was.</p></div>
         <div class="row"><p class="label">Why</p><p>A single at-a-glance summary that every layer was checked against a stated criterion, not just presented as "the answer."</p></div>
         <div class="row"><p class="label">Columns</p><p>Layer · Validation approach · Outcome.</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"This is the table I'd flip to first if asked 'how do you know any of this is real' — it's the whole rigor argument in one place."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"This is the table to flip to first if asked 'how do you know any of this is real': it's the whole rigor argument in one place."</p></div>
       </div>
     </section>
 
@@ -326,7 +326,7 @@
         <div class="row"><p class="label">What</p><p>One row per known limitation, paired with its mitigation or current status.</p></div>
         <div class="row"><p class="label">Why</p><p>Pre-empts the "have you thought about X" question by answering it before it's asked.</p></div>
         <div class="row"><p class="label">Columns</p><p>Limitation · Mitigation / status.</p></div>
-        <div class="row"><p class="label">How to read it</p><p>"Every limitation here has a mitigation or an explicit 'acknowledged, not fixed' — there's no limitation in this table that's silently ignored."</p></div>
+        <div class="row"><p class="label">How to read it</p><p>"Every limitation here has a mitigation or an explicit 'acknowledged, not fixed'; there's no limitation in this table that's silently ignored."</p></div>
       </div>
     </section>
 
